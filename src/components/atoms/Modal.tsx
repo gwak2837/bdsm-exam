@@ -83,7 +83,7 @@ export default function Modal({ className = '', children, open, onClose, showClo
     document.addEventListener('touchcancel', () => document.removeEventListener('touchmove', moveModal), { once: true })
   }
 
-  const modalBackground = `fixed inset-0 z-20 flex items-center justify-center bg-black/20 transition duration-300 ${
+  const modalBackground = `fixed inset-0 z-20 flex items-center justify-center bg-black/20 dark:bg-black/80 transition duration-300 ${
     open ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'
   }`
 
@@ -120,7 +120,7 @@ export default function Modal({ className = '', children, open, onClose, showClo
             onMouseDown={dragModalMouse}
             onTouchStart={dragModalTouch}
           >
-            <div className="h-1 w-8 rounded-full bg-slate-200" />
+            <div className="h-1 w-8 rounded-full bg-slate-400 dark:bg-slate-600" />
           </div>
         )}
         {children}
